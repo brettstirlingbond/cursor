@@ -1,0 +1,202 @@
+:root {
+  --bg: #050816;
+  --bg-alt: #0b1020;
+  --card: #0f172a;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.2);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: rgba(148, 163, 184, 0.3);
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 22px 45px rgba(15, 23, 42, 0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+  color: var(--text);
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 2.5rem 0 2rem;
+}
+
+.site-header .container {
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: radial-gradient(circle at top left, #1d4ed8 0, transparent 35%),
+    radial-gradient(circle at top right, #22c55e 0, transparent 45%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.94));
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.9rem, 3vw, 2.3rem);
+  letter-spacing: -0.04em;
+}
+
+.site-header p {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  max-width: 32rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: var(--text);
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.01), #020617);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: border-color 0.18s ease, background-color 0.18s ease,
+    color 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease;
+}
+
+.nav a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, #22c55e, #16a34a);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+}
+
+.nav a:hover {
+  border-color: rgba(56, 189, 248, 0.85);
+  color: #e0f2fe;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.1), #020617);
+  transform: translateY(-1px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.8);
+}
+
+.site-main {
+  flex: 1;
+  padding-bottom: 2.5rem;
+}
+
+.section {
+  padding: 1.5rem 0;
+}
+
+.section-alt .container {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.09), transparent 45%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+  box-shadow: var(--shadow-soft);
+}
+
+.section .container {
+  background-color: rgba(15, 23, 42, 0.92);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  padding: 1.75rem 1.75rem 1.6rem;
+  backdrop-filter: blur(22px);
+}
+
+.section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.section p {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+ul,
+ol {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+li + li {
+  margin-top: 0.25rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  padding: 0.15rem 0.35rem;
+  border-radius: 999px;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: #e0f2fe;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(30, 64, 175, 0.7);
+  padding: 1.25rem 0 2rem;
+  margin-top: auto;
+  background: radial-gradient(circle at top, rgba(30, 64, 175, 0.4), transparent 55%),
+    radial-gradient(circle at bottom, rgba(0, 0, 0, 0.6), #000814);
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.site-footer p::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, #f97316, #ea580c);
+  box-shadow: 0 0 0 3px rgba(248, 171, 114, 0.2);
+  margin-right: 0.5rem;
+  vertical-align: baseline;
+}
+
+@media (max-width: 640px) {
+  .site-header .container {
+    padding: 1.4rem 1.4rem 1.2rem;
+  }
+
+  .section .container {
+    padding: 1.35rem 1.35rem 1.2rem;
+  }
+}
+
